@@ -31,6 +31,7 @@ $(function(){
 })
 peer.on("open",(id)=>{
     socket.emit("open", roomid, id, user)
+    console.log(roomid, id, user)
 })
 socket.on("createMessage", (message, user)=>{
     $(".messages").append(`<div class="message"><b>${user == user? "me" : user}</b><span>${message}</span></div>`)
